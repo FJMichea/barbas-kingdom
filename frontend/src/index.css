@@ -1,0 +1,57 @@
+/* frontend/src/index.css */
+
+/* FUENTES Y BASE */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* UTILIDADES */
+.cursor-pointer { cursor: pointer; }
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ANIMACIONES */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in { animation: fadeIn 0.4s ease-out forwards; }
+
+.hover-scale { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.hover-scale:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important; }
+
+/* ACORDEÓN */
+.accordion-enter {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out, opacity 0.4s ease-out;
+}
+.accordion-enter.active {
+  max-height: 2000px;
+  opacity: 1;
+}
+
+.rotate-icon { transition: transform 0.3s ease; }
+.rotate-icon.open { transform: rotate(45deg); }
+
+/* ======================================================= */
+/* CORRECCIÓN CRÍTICA DE CAPAS (Z-INDEX FIX)               */
+/* ======================================================= */
+
+/* 1. La alerta SweetAlert siempre encima de todo (Nivel Dios) */
+div.swal2-container {
+  z-index: 20000 !important;
+}
+
+/* 2. El fondo oscuro de la alerta */
+div.swal2-backdrop-show {
+  z-index: 19999 !important;
+}
+
+/* 3. Asegurar que los modales de Bootstrap no interfieran */
+.modal-backdrop {
+  z-index: 1040 !important;
+}
