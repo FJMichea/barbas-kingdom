@@ -30,7 +30,7 @@ Sigue estos pasos para correr el proyecto en tu máquina local:
 
 ### 1. Clonar el repositorio
 ```bash
-git clone [https://github.com/TU_USUARIO/barbas-kingdom.git](https://github.com/FJMichea/barbas-kingdom.git)
+git clone [https://github.com/FJMichea/barbas-kingdom.git](https://github.com/FJMichea/barbas-kingdom.git)
 cd barbas-kingdom
 
 2. Configurar el Backend
